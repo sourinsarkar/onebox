@@ -1,3 +1,4 @@
+import colorSystem from "./src/utils/colorSystem";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -8,6 +9,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: colorSystem
     },
   },
   plugins: [],
