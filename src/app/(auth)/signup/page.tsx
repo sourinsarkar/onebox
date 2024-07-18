@@ -18,7 +18,7 @@ export default function Signup() {
                     </button>
                 </section>
                 <section className="space-y-6">
-                    <button className="text-white text-sm bg-[#4B63DD] py-3 px-8 rounded">
+                    <button className="text-white font-semibold text-sm bg-[#4B63DD] py-3 px-8 rounded">
                         Create an account
                     </button>
                     <p className="text-[#909296]">Already have an account? <Link href="#" className="text-[#C1C2C5]">Sign In</Link></p>
