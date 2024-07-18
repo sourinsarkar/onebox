@@ -1,8 +1,9 @@
 import { RiArrowDownSLine, RiRefreshLine, RiSearchLine } from "@remixicon/react";
+import { MailCard } from "./MailCard";
 
 export function MailList() {
     return (
-        <div className="space-y-4">
+        <div className="space-y-3 m-auto">
             <section className="flex justify-between">
                 <div className="space-y-1">
                     <div className="flex items-center text-[#4285F4]">
@@ -41,7 +42,11 @@ export function MailList() {
                 </div>
             </section>
             
-            <section></section>
+            <section className="space-y-4">
+                <MailCard />
+                <MailCard />
+                <MailCard />
+            </section>
         </div>
     );
 }
