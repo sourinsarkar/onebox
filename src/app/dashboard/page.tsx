@@ -19,7 +19,7 @@ export default function Dashboard() {
                 <div className="absolute bottom-4">
                     <BlueBtn />
                 </div>
-                <div className="absolute bottom-4 w-full">
+                <div className="absolute bottom-4 w-full z-20">
                     <MailEditor />
                 </div>
             </section>
