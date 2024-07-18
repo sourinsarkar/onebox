@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export function MailHeader() {
     return (
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between border-b-[1px] border-[#DEDEDE] bg-white py-3 px-5">
             <section>
                 <h2 className="text-sm font-semibold">Orlando</h2>
                 <p className="text-xs">orlando@gmail.com</p>
