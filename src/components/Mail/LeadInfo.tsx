@@ -86,7 +86,7 @@ export function LeadInfo() {
                                 <div>
                                     <RiMailLine size={32} className="p-1 bg-[#EEF1F4] border-2 border-[#DFE3E8] rounded-full" />
                                 </div>
-                                <div>
+                                <div>   
                                     <h3 className="text-sm font-semibold text-[#454F5B]">Step 1: Email</h3>
                                     <div className="text-[#637381] flex items-center gap-2 mt-1.5">
                                         <RiSendPlaneLine size={16} />
