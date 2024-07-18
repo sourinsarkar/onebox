@@ -1,11 +1,32 @@
+"use client";
+
 import { MailList } from "@/components/Mail/MailList";
 import { LeadInfo } from "@/components/Mail/LeadInfo"
 import { MailHeader } from "@/components/Mail/MailHeader";
 import { MailFeed } from "@/components/Mail/MailFeed";
 import { BlueBtn } from "@/components/Buttons/BlueBtn";
 import { MailEditor } from "@/components/Mail/MailEditor";
+import { useDispatch } from  "react-redux";
+import { toggleIsOpen } from "@/redux/features/editor/isOpen"
+import { useEffect } from "react"
 
 export default function Dashboard() {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        const handleKeyPress = (event: KeyboardEvent) => {
+            if (event.key === 'R' || event.key === 'r') {
+                dispatch(toggleIsOpen());
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyPress);
+        
+        return () => {
+            window.removeEventListener('keydown', handleKeyPress);
+        };
+    }, [dispatch]);
+
     return (
         <div className="flex justify-between">
             <section className="w-1/5 py-3 px-5 bg-[#FAFAFA]" style={{ height: `calc(100vh - 4rem)` }}><MailList /></section>
