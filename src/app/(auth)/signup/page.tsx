@@ -19,7 +19,7 @@ export default function Signup() {
             dispatch(setToken(token));
             router.push("/dashboard");
         }
-    }, [ token, dispatch]);
+    }, [ token, dispatch, router]);
 
 const handleLogin = () => {
     window.location.href = 'https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=http://localhost:3000';
