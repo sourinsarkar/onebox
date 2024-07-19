@@ -16,7 +16,7 @@ export function MailList() {
                 </div>    
                 
                 <div>
-                    <div className="w-8 h-8 flex items-center justify-center border-[1px] border-[#DFE3E8] dark:border-0 rounded-md">
+                    <div className="w-8 h-8 flex items-center justify-center dark:bg-[#25262B] border-[1px] border-[#DFE3E8] dark:border-0 rounded-md">
                         <RiRefreshLine size={16} className="dark:text-[#F6F6F6]"/>
                     </div>
                 </div>
