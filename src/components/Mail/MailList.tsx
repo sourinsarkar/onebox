@@ -11,31 +11,31 @@ export function MailList() {
                         <RiArrowDownSLine size={24}/>
                     </div>
                     <div>
-                        <p className="text-[#343A40] font-bold text-sm">25/25 <span className="text-[#7F7F7F] font-normal">Inboxes Selected</span></p>
+                        <p className="text-[#343A40] dark:text-white font-bold text-sm">25/25 <span className="text-[#7F7F7F] dark:text-[#7F7F7F] font-normal">Inboxes Selected</span></p>
                     </div>
                 </div>    
                 
                 <div>
-                    <div className="w-8 h-8 flex items-center justify-center border-[1px] border-[#DFE3E8] rounded-md">
-                        <RiRefreshLine size={16} />
+                    <div className="w-8 h-8 flex items-center justify-center border-[1px] border-[#DFE3E8] dark:border-0 rounded-md">
+                        <RiRefreshLine size={16} className="dark:text-[#F6F6F6]"/>
                     </div>
                 </div>
             </section>
 
             <section className="space-y-2.5">
                 {/* Search */}
-                <div className="flex items-center gap-1 bg-[#F4F6F8] border-[1px] border-[#DFE3E8] rounded-md p-py px-1.5">
-                    <RiSearchLine size={18} />
-                    <input type="search" placeholder="Search" className="w-full outline-none bg-[#F4F6F8] rounded-md  placeholder:text-[#ADBAC7] placeholder:text-sm" />
+                <div className="flex items-center gap-1 bg-[#F4F6F8] dark:bg-[#23272C] border-[1px] border-[#DFE3E8] dark:border-[#DFE3E8]/10 rounded-md p-py px-1.5">
+                    <RiSearchLine size={18} className="dark:text-white/20"/>
+                    <input type="search" placeholder="Search" className="w-full outline-none bg-[#F4F6F8] dark:bg-[#23272C] rounded-md  placeholder:text-[#ADBAC7] dark:placeholder:text-white/20 placeholder:text-sm" />
                 </div>
 
                 {/* Filter */}
                 <div className="flex items-center justify-between text-[#172B4D] font-semibold text-sm">
                     <div className="flex items-center gap-1">
-                        <p className="p-py px-1.5 rounded-full bg-[#ECECEC] text-[#5C7CFA]">26</p>
-                        <p>New Replies</p>
+                        <p className="p-py px-1.5 rounded-full bg-[#ECECEC] dark:bg-[#222426] text-[#5C7CFA]">26</p>
+                        <p className=" dark:text-[#E6E6E6]">New Replies</p>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 dark:text-[#E6E6E6]">
                         <p>Newest</p>
                         <RiArrowDownSLine size={16}/>
                     </div>
@@ -43,6 +43,7 @@ export function MailList() {
             </section>
             
             <section className="space-y-4">
+                <MailCard />
                 <MailCard />
                 <MailCard />
                 <MailCard />

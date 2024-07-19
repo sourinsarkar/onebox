@@ -6,7 +6,7 @@ export function SideNav() {
     const icons = [RiHome5Fill, RiUserSearchFill, RiMailFill, RiSendPlaneFill, RiFileListFill, RiInbox2Fill, RiBarChartFill];
 
     return (
-        <nav className="h-screen flex flex-col items-center justify-between w-14 bg-[#FAFAFA] border-r-[1px] border[#D8D8D8]">
+        <nav className="h-screen flex flex-col items-center justify-between w-14 bg-[#FAFAFA] dark:bg-[#101113] border-r-[1px] border[#D8D8D8] dark:border-[#343A40]">
             <section className="h-[10%] flex items-center justify-center">
                 <Image
                     src="/images/ribicon.svg"
