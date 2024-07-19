@@ -21,7 +21,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <StoreProvider>
           <ThemeProvider>
-            {children}
+            <div className="max-w-[1440px] m-auto">
+              {children}
+            </div>
           </ThemeProvider>
         </StoreProvider>
       </body>
