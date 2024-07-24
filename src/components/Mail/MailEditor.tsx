@@ -13,11 +13,13 @@ export function MailEditor() {
     const isItalic = useSelector((state:RootState) => state.italic.value);  
     const isOpen = useSelector((state:RootState) => state.isOpen.value);  
 
-    const handleBoldClick = () => {
+    const handleBoldClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
         dispatch(toggleBold());
     };
 
-    const handleItalicClick = () => {
+    const handleItalicClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
         dispatch(toggleItalic());
     };
 

@@ -1,16 +1,25 @@
 import { RiSendPlaneFill } from "@remixicon/react";
 import Image from "next/image";
+import { Mail } from "@/utils/types";
 
-export function MailCard() {
+export function MailCard({ fromEmail, subject, sentAt }: Mail) {
+    const dateObj = new Date(sentAt);
+
+    const formattedDate = dateObj.toLocaleDateString('en', {
+        month: 'short',
+        day: 'numeric',
+    }).split(' ').map((part, index) => index === 0 ? part.slice(0, 3) : part).join(' ');
+
     return (
         <div className="space-y-2 pb-4 border-b-[1px] dark:border-white/20">
             <div className="flex justify-between">
                 <div>
-                    <h2 className="text-[#343A40] dark:text-white text-sm font-medium ">william@gmail.com</h2>
-                    <p className="text-[#172B4D] dark:text-[#E1E0E0] text-xs mt-1">Payment not going through</p>
+                    <h2 className="text-[#343A40] dark:text-white text-sm font-medium ">{fromEmail.length > 12 ? `${fromEmail.slice(0, 12)}...` : fromEmail}</h2>
+                    <p className="text-[#172B4D] dark:text-[#E1E0E0] text-xs mt-1">{subject.length > 25 ? `${subject.slice(0, 25)}...` : subject}</p>
                 </div>
                 <div>
-                    <p className="text-[#919EAB] dark:text-[#FCFCFC66]/40 text-xs">Mar 7</p>
+                    <p className="text-[#919EAB] dark:text-[#FCFCFC66]/40 text-xs">{formattedDate}</p>
+
                 </div>
             </div>
 

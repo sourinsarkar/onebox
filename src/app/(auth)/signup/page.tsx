@@ -13,7 +13,7 @@ const SignupContent = () => {
     
     const searchParams = useSearchParams();
     const token = searchParams.get("token");
-    
+    console.log("Token", token)
     useEffect(() => {
         if (token) {
             dispatch(setToken(token));

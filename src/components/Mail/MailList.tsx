@@ -1,7 +1,40 @@
+"use client";
+
 import { RiArrowDownSLine, RiRefreshLine, RiSearchLine } from "@remixicon/react";
 import { MailCard } from "./MailCard";
+import { useState, useEffect } from "react";
+import { Mail } from "@/utils/types";
+import { api } from "@/utils/api";
 
 export function MailList() {
+    const [mails, setMails] = useState<Mail[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string|null>(null);
+    
+    useEffect(() => {
+        async function fetchMails() {
+            try {
+                const response = await api.get("/onebox/list");
+                setMails(response.data.data);
+            } catch(error) {
+                setError("Failed to fetch emails");
+                console.error("Fetch email error: ", error);
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        fetchMails();
+    }, []);
+
+    if (loading) {
+        return <p>Loading...</p>
+    }
+
+    if (error) {
+        return <p>{error}</p>
+    }
+
     return (
         <div className="space-y-3 m-auto">
             <section className="flex justify-between">
@@ -43,10 +76,18 @@ export function MailList() {
             </section>
             
             <section className="space-y-4">
-                <MailCard />
-                <MailCard />
-                <MailCard />
-                <MailCard />
+                {mails.length > 0 ? (
+                    mails.map((mail, index) => (
+                        <MailCard
+                            key={index}
+                            fromEmail={mail.fromEmail}
+                            subject={mail.subject}
+                            sentAt={mail.sentAt}
+                        />
+                    ))
+                ) : (
+                    <p>No mails found!</p>
+                )}
             </section>
         </div>
     );
