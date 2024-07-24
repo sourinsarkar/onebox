@@ -15,7 +15,9 @@ export function MailList() {
         async function fetchMails() {
             try {
                 const response = await api.get("/onebox/list");
-                setMails(response.data.data);
+                const fetchedMails = response.data.data;
+                setMails(fetchedMails);
+                localStorage.setItem("mails", JSON.stringify(fetchedMails));
             } catch(error) {
                 setError("Failed to fetch emails");
                 console.error("Fetch email error: ", error);
@@ -24,7 +26,13 @@ export function MailList() {
             }
         }
 
-        fetchMails();
+        const savedMails = localStorage.getItem('mails');
+        if (savedMails) {
+            setMails(JSON.parse(savedMails));
+            setLoading(false);
+        } else {
+            fetchMails();
+        }
     }, []);
 
     if (loading) {
@@ -55,7 +63,7 @@ export function MailList() {
                 </div>
             </section>
 
-            <section className="space-y-2.5">
+            <section className="space-y-2.5 border-b-[1px] dark:border-white/20 pb-3">
                 {/* Search */}
                 <div className="flex items-center gap-1 bg-[#F4F6F8] dark:bg-[#23272C] border-[1px] border-[#DFE3E8] dark:border-[#DFE3E8]/10 rounded-md p-py px-1.5">
                     <RiSearchLine size={18} className="dark:text-white/20"/>

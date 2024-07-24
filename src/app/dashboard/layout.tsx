@@ -9,6 +9,7 @@ import { RiInbox2Fill } from "@remixicon/react";
 
 export default function DashboardLayout({ children }: {children: React.ReactNode}) {
     const isOpen = useSelector((state: RootState) => state.inboxLayout.isOpen);
+    const token = useSelector((state: RootState) => state.auth.token);
     
     return (
         <div className="flex">
