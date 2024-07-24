@@ -42,11 +42,9 @@ const SignupContent = () => {
                     </button>
                 </section>
                 <section className="space-y-6">
-                    <Link href="/dashboard">
-                        <div className="text-white font-semibold text-sm bg-[#4B63DD] py-3 px-8 rounded">
-                            Head over to Dashboard
-                        </div>
-                    </Link>
+                    <button onClick={handleLogin} className="text-white font-semibold text-sm bg-[#4B63DD] py-3 px-8 rounded">
+                        Create an account
+                    </button>
                     <p className="text-[#909296]">Already have an account? <Link href="#" className="text-[#C1C2C5]">Sign In</Link></p>
                 </section>
             </div>
