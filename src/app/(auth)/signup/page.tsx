@@ -10,7 +10,7 @@ import { setToken } from "@/redux/features/auth/authSlice";
 const SignupContent = () => {
     const router = useRouter();
     const dispatch = useDispatch();
-
+    
     const searchParams = useSearchParams();
     const token = searchParams.get("token");
     
@@ -22,7 +22,8 @@ const SignupContent = () => {
     }, [token, dispatch, router]);
 
     const handleLogin = () => {
-        window.location.href = 'https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=http://localhost:3000';
+        const redirectUrl = `${window.location.origin}/signup`;
+        window.location.href = `https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=${encodeURIComponent(redirectUrl)}`;
     }
 
     return (
